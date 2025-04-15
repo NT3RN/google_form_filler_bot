@@ -1,4 +1,4 @@
-# 🧠 Google Form Auto Filler Bot using Selenium (Edge Browser)
+# 🧠 Google Form(Single page) Auto Filler Bot using Selenium (Edge Browser)
 
 This Python script automatically fills out and submits a Google Form multiple times using random answers. It supports English and Bangla language forms and handles different question types like **radio buttons** and **checkboxes**.
 
@@ -11,7 +11,7 @@ This Python script automatically fills out and submits a Google Form multiple ti
 - Adds slight delays to simulate human behavior
 - Supports Microsoft Edge via `msedgedriver`
 
-**🧩 Requirements**
+## **🧩 Requirements**
 
 You need to have the following installed:
 
@@ -21,7 +21,7 @@ You need to have the following installed:
 - Edge WebDriver: https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver
 
   
-**🔧 Setup**
+## **🔧 Setup**
 
 Clone this repository or download the script.
 Replace the following placeholders in the script:
