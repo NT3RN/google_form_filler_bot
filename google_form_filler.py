@@ -5,13 +5,13 @@ from selenium.webdriver.edge.options import Options
 import time
 import random
 
-# ✅ Path to msedgedriver
+# Path to msedgedriver
 EDGE_DRIVER_PATH = r"your\\path\\to\\msedgedriver.exe"
 
-# ✅ Your full Google Form URL
+# Your full Google Form URL
 FORM_URL = "https://docs.google.com/xxxxxxx/xxxxxxxx"
 
-# ✅ Number of submissions
+# Number of submissions
 NUM_SUBMISSIONS = 150
 
 for submission in range(NUM_SUBMISSIONS):
@@ -55,7 +55,7 @@ for submission in range(NUM_SUBMISSIONS):
                     print(f"✔ Radio: Selected - {selected_text}")
                     time.sleep(0.3)
                 else:
-                    print(f"⚠️ Radio question {i + 1}: No options found.")
+                    print(f" Radio question {i + 1}: No options found.")
 
             
             checkbox_group = container.find_elements(By.XPATH, './/div[@role="list"]')
@@ -63,7 +63,7 @@ for submission in range(NUM_SUBMISSIONS):
                 try:
                     checkbox_items = checkbox_group[0].find_elements(By.XPATH, './/div[@role="listitem"]//div[@role="checkbox" and @tabindex="0"]')
                     if checkbox_items:
-                        print(f"ℹ️ Checkbox question {i + 1}: Found {len(checkbox_items)} options.")
+                        print(f" Checkbox question {i + 1}: Found {len(checkbox_items)} options.")
                         num_choices = random.randint(1, len(checkbox_items))
                         selected_items = random.sample(checkbox_items, num_choices)
                         selected_texts = []
@@ -87,17 +87,17 @@ for submission in range(NUM_SUBMISSIONS):
                                 print(f"✔ Checkbox: Selected - {selected_text}")
                                 time.sleep(0.3)
                             except Exception as e_checkbox_interact:
-                                print(f"⚠️ Error interacting with checkbox: {e_checkbox_interact}")
+                                print(f" Error interacting with checkbox: {e_checkbox_interact}")
                         
                         if selected_texts:
                             submission_log.append(f"Question {question_text}: {', '.join(selected_texts)}")
                     else:
-                        print(f"⚠️ Checkbox question {i + 1}: No options found.")
+                        print(f" Checkbox question {i + 1}: No options found.")
                 except Exception as e_checkbox:
-                    print(f"⚠️ Error processing checkbox question {i + 1}: {e_checkbox}")
+                    print(f" Error processing checkbox question {i + 1}: {e_checkbox}")
 
         except Exception as e_question:
-            print(f"⚠️ Error processing question {i + 1} (finding container or parts): {e_question}")
+            print(f" Error processing question {i + 1} (finding container or parts): {e_question}")
 
     time.sleep(1)  
 
@@ -107,17 +107,17 @@ for submission in range(NUM_SUBMISSIONS):
             '//span[contains(text(),"Submit") or contains(text(),"জমা দিন")]/ancestor::div[@role="button"]'
         )
         submit_btn.click()
-        print("✅ Form submitted.")
+        print(" Form submitted.")
     except Exception as e_submit:
-        print(f"❌ Could not find Submit button. Skipping this run. Error: {e_submit}")
+        print(f" Could not find Submit button. Skipping this run. Error: {e_submit}")
 
     
-    print("\n📝 Submitted Answers:")
+    print("\n Submitted Answers:")
     for log_entry in submission_log:
         print(log_entry)
 
     time.sleep(2)
-    driver.quit()  # Quit the browser after each submission
+    driver.quit()  
 
-    # ✅ Delay between submissions (adjust if needed)
+    # Delay between submissions (adjust if needed)
     time.sleep(1)
