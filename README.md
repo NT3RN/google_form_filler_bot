@@ -18,6 +18,7 @@ You need to have the following installed:
 - Python 3.x
 - Selenium: You can install it using **Bash**:
   `pip install selenium`
+- Edge WebDriver: https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/?form=MA13LH
 
   
 **🔧 Setup**
