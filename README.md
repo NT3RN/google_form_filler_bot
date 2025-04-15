@@ -16,7 +16,7 @@ This Python script automatically fills out and submits a Google Form multiple ti
 You need to have the following installed:
 
 - Python 3.x
-- Selenium: You can install it using: Bash
+- Selenium: You can install it using **Bash**:
   `pip install selenium`
 
   
