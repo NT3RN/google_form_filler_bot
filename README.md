@@ -1,4 +1,4 @@
-# 🧠 Google Form(Single page) Auto Filler Bot using Selenium (Edge Browser)
+# 🧠 Google Form(Single page) Auto Filler Bot using Selenium (Edge Browser) for windows
 
 This Python script automatically fills out and submits a Google Form multiple times using random answers. It supports English and Bangla language forms and handles different question types like **radio buttons** and **checkboxes**.
 
